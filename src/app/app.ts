@@ -508,7 +508,19 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
   printResume() {
     this.sound.playClick();
     if (typeof window !== 'undefined') {
-      window.print();
+      const prevBodyOverflow = document.body.style.overflow;
+      const prevHtmlOverflow = document.documentElement.style.overflow;
+      document.body.style.overflow = 'visible';
+      document.documentElement.style.overflow = 'visible';
+      document.body.classList.add('is-printing-resume');
+
+      // Allow style recalculation before browser opens native print preview
+      setTimeout(() => {
+        window.print();
+        document.body.style.overflow = prevBodyOverflow || 'hidden';
+        document.documentElement.style.overflow = prevHtmlOverflow || 'visible';
+        document.body.classList.remove('is-printing-resume');
+      }, 60);
     }
   }
 
