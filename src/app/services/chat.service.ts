@@ -73,9 +73,7 @@ Guidelines:
 
 // Encoded Gemini token decoded at runtime to prevent plain-text secret exposure
 const BACKEND_GEMINI_TOKEN_B64 = 'QVEuQWI4Uk42SVF6WVVxLWEyR1U0QnNmOGtzQ3F0aXhEM2JPTlNXUXNIS2FvZW5EbHNTVHc=';
-export const BACKEND_GEMINI_API_KEY = typeof atob !== 'undefined'
-  ? atob(BACKEND_GEMINI_TOKEN_B64)
-  : (typeof Buffer !== 'undefined' ? Buffer.from(BACKEND_GEMINI_TOKEN_B64, 'base64').toString('utf8') : '');
+export const BACKEND_GEMINI_API_KEY = typeof atob !== 'undefined' ? atob(BACKEND_GEMINI_TOKEN_B64) : '';
 
 @Injectable({
   providedIn: 'root'
