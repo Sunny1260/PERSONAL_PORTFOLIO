@@ -472,4 +472,107 @@
 }
 
 
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  /* Hide absolutely everything by default */
+  body > * {
+    display: none !important;
+  }
+
+  /* Show only the Angular app-root */
+  body > app-root {
+    display: block !important;
+  }
+
+  /* Inside app-root, hide everything except the resume modal */
+  app-root > * {
+    display: none !important;
+  }
+
+  /* The resume modal backdrop — show it and reset from fixed overlay to normal flow */
+  .print-resume-modal {
+    display: block !important;
+    position: static !important;
+    background: white !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    z-index: auto !important;
+  }
+
+  /* The modal glass container — reset to normal document flow */
+  .print-resume-modal > .glass-panel {
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: white !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    color: black !important;
+  }
+
+  /* Hide action header and footer (buttons, close, etc.) */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Hide the chat agent component */
+  app-chat-agent {
+    display: none !important;
+  }
+
+  /* Reset resume content area for proper print pagination */
+  .print-resume-modal .glass-panel > div:not(.no-print) {
+    padding: 24px 32px !important;
+    color: #1a1a1a !important;
+    overflow: visible !important;
+  }
+
+  /* Force all text to dark for readability on white paper */
+  .print-resume-modal * {
+    color: #1a1a1a !important;
+    border-color: #ddd !important;
+    background: transparent !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Re-enable accent colors for section headers */
+  .print-resume-modal h2,
+  .print-resume-modal h3 {
+    color: #1a1a1a !important;
+  }
+
+  .print-resume-modal .text-\[\#ff3b00\] {
+    color: #cc3000 !important;
+  }
+
+  .print-resume-modal .text-emerald-400 {
+    color: #059669 !important;
+  }
+
+  /* Skill tags & badges — give them visible borders */
+  .print-resume-modal span[class*="rounded"] {
+    border: 1px solid #ccc !important;
+    padding: 2px 6px !important;
+  }
+
+  /* Avoid page breaks inside role blocks and project blocks */
+  .print-resume-modal .space-y-1\.5,
+  .print-resume-modal .space-y-1 {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Force proper margins for print */
+  @page {
+    margin: 16mm 12mm;
+    size: A4;
+  }
+}
+
 

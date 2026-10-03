@@ -118,7 +118,7 @@ import { PROJECTS_DATA, ProjectItem } from '../models/portfolio.data';
     <!-- ==================== EXPANDED CHAT WINDOW (Independently Fixed in Viewport) ==================== -->
     @if (chatService.isOpen()) {
       <div
-        class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 w-[92vw] sm:w-[420px] h-[560px] max-h-[85vh] rounded-3xl overflow-hidden glass-panel border border-white/15 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] flex flex-col animate-in slide-in-from-bottom-6 fade-in duration-300 text-white bg-[#0c0c0e]/95 backdrop-blur-2xl"
+        class="fixed bottom-3 sm:bottom-6 right-3 sm:right-6 left-3 sm:left-auto z-50 w-auto sm:w-[420px] h-[540px] max-h-[85vh] rounded-2xl sm:rounded-3xl overflow-hidden glass-panel border border-white/15 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] flex flex-col animate-in slide-in-from-bottom-6 fade-in duration-300 text-white bg-[#0c0c0e]/95 backdrop-blur-2xl"
       >
         <!-- Header -->
         <div class="px-5 py-3.5 border-b border-white/10 flex items-center justify-between bg-white/5 backdrop-blur-md">

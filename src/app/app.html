@@ -6,14 +6,14 @@
     <div class="fixed inset-0 z-50 pointer-events-auto flex overflow-hidden">
       <!-- Left Curtain Half -->
       <div
-        class="w-1/2 h-full bg-[#0c0c0e] text-white flex flex-col justify-between p-8 md:p-14 border-r border-white/10 transition-transform duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]"
+        class="w-1/2 h-full bg-[#0c0c0e] text-white flex flex-col justify-between p-4 sm:p-8 md:p-14 border-r border-white/10 transition-transform duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]"
         [class.-translate-x-full]="curtainOpening()"
       >
-        <div class="font-mono text-xs text-white/50 tracking-widest uppercase">
+        <div class="font-mono text-[10px] sm:text-xs text-white/50 tracking-widest uppercase">
           // PORTFOLIO V2.0
         </div>
         <div>
-          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/5 border border-white/15 p-1.5 flex items-center justify-center shadow-xl mb-4 backdrop-blur-md">
+          <div class="w-11 h-11 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-white/5 border border-white/15 p-1 sm:p-1.5 flex items-center justify-center shadow-xl mb-3 sm:mb-4 backdrop-blur-md">
             <img
               src="assets/logo.png"
               alt="Sunny Verma Logo"
@@ -22,39 +22,39 @@
               class="w-full h-full object-contain filter drop-shadow-[0_2px_10px_rgba(255,59,0,0.6)]"
             />
           </div>
-          <div class="font-mono text-sm text-[#ff3b00] tracking-wider mb-2 font-medium">B.TECH CSE (AI/ML) · CDLU SIRSA</div>
-          <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight uppercase leading-none">
+          <div class="font-mono text-xs sm:text-sm text-[#ff3b00] tracking-wider mb-1.5 sm:mb-2 font-medium">B.TECH CSE · CDLU</div>
+          <h1 class="font-display text-2xl sm:text-5xl md:text-7xl font-bold tracking-tight uppercase leading-none">
             SUNNY<br />VERMA
           </h1>
         </div>
-        <div class="font-mono text-xs text-white/40">
-          MUMBAI, INDIA (WORK) · HISAR, HARYANA (HOME)
+        <div class="font-mono text-[10px] sm:text-xs text-white/40 leading-tight">
+          MUMBAI (WORK) · HISAR (HOME)
         </div>
       </div>
 
       <!-- Right Curtain Half -->
       <div
-        class="w-1/2 h-full bg-[#121215] text-white flex flex-col justify-between p-8 md:p-14 transition-transform duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]"
+        class="w-1/2 h-full bg-[#121215] text-white flex flex-col justify-between p-4 sm:p-8 md:p-14 transition-transform duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]"
         [class.translate-x-full]="curtainOpening()"
       >
-        <div class="font-mono text-xs text-right text-emerald-400 flex items-center justify-end gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <div class="font-mono text-[10px] sm:text-xs text-right text-emerald-400 flex items-center justify-end gap-1.5 sm:gap-2">
+          <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           AVAILABLE FOR HIRE
         </div>
         <div class="text-right">
-          <p class="font-mono text-sm text-[#ff3b00] font-semibold mb-2 tracking-wider">// PRIMARY ARCHITECTURE</p>
-          <div class="font-display text-2xl sm:text-4xl md:text-5xl font-light text-white/90">
+          <p class="font-mono text-xs sm:text-sm text-[#ff3b00] font-semibold mb-1 sm:mb-2 tracking-wider">// FULL-STACK</p>
+          <div class="font-display text-lg sm:text-3xl md:text-5xl font-light text-white/90 leading-tight">
             FULL-STACK DEVELOPER<br />
-            <span class="text-white/40">MEAN &amp; MERN STACKS</span>
+            <span class="text-white/40">MEAN &amp; MERN</span>
           </div>
         </div>
         <div class="flex justify-end">
           <button
             (click)="openCurtain()"
-            class="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black font-mono text-xs font-semibold tracking-wider uppercase hover:bg-[#ff3b00] hover:text-white transition-all duration-300 shadow-xl cursor-pointer"
+            class="group flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white text-black font-mono text-[10px] sm:text-xs font-semibold tracking-wider uppercase hover:bg-[#ff3b00] hover:text-white transition-all duration-300 shadow-xl cursor-pointer"
           >
-            <span>ENTER PORTFOLIO</span>
-            <i class="bx bx-right-arrow-alt text-base transition-transform group-hover:translate-x-1"></i>
+            <span>ENTER</span>
+            <i class="bx bx-right-arrow-alt text-sm sm:text-base transition-transform group-hover:translate-x-1"></i>
           </button>
         </div>
       </div>
@@ -279,12 +279,12 @@
   </aside>
 
   <!-- ==================== FLOATING GLASS DOCK NAVIGATION ==================== -->
-  <header class="fixed top-4 inset-x-0 z-40 px-4 max-w-7xl mx-auto pointer-events-none">
-    <nav class="pointer-events-auto flex items-center justify-between px-4 sm:px-6 py-3 rounded-full glass-nav shadow-lg transition-all duration-300">
+  <header class="fixed top-2 sm:top-4 inset-x-0 z-40 px-2 sm:px-4 max-w-7xl mx-auto pointer-events-none">
+    <nav class="pointer-events-auto flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3 rounded-full glass-nav shadow-lg transition-all duration-300">
       
       <!-- Brand Logo -->
-      <a href="#top" class="flex items-center gap-2.5 font-display font-bold text-lg tracking-tight group cursor-pointer" aria-label="Sunny Verma Home">
-        <div class="relative w-8 h-8 rounded-xl bg-white/5 border border-white/15 p-1 flex items-center justify-center group-hover:scale-110 group-hover:border-[#ff3b00]/70 transition-all shadow-md overflow-hidden">
+      <a href="#top" class="flex items-center gap-2 font-display font-bold text-base sm:text-lg tracking-tight group cursor-pointer" aria-label="Sunny Verma Home">
+        <div class="relative w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-white/5 border border-white/15 p-1 flex items-center justify-center group-hover:scale-110 group-hover:border-[#ff3b00]/70 transition-all shadow-md overflow-hidden">
           <img
             src="assets/logo.png"
             alt="Sunny Verma Logo"
@@ -293,15 +293,15 @@
             class="w-full h-full object-contain filter drop-shadow-[0_1px_4px_rgba(255,59,0,0.5)]"
           />
         </div>
-        <div class="flex items-center gap-1">
+        <div class="flex items-center gap-0.5 sm:gap-1">
           <span class="transition-transform group-hover:text-[#ff3b00]">Sunny</span>
           <span class="text-[#ff3b00] font-black text-xl leading-none">.</span>
           <span class="transition-transform group-hover:text-white">Verma</span>
         </div>
-        <span class="hidden sm:inline-block ml-2 px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wider bg-[#ff3b00]/10 text-[#ff3b00] border border-[#ff3b00]/30 font-bold">
+        <span class="hidden md:inline-block ml-2 px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wider bg-[#ff3b00]/10 text-[#ff3b00] border border-[#ff3b00]/30 font-bold">
           MEAN &amp; MERN
         </span>
-        <span class="hidden sm:inline-block ml-1 px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
+        <span class="hidden lg:inline-block ml-1 px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
           CGPA 8.0
         </span>
       </a>
@@ -316,12 +316,12 @@
       </div>
 
       <!-- Controls: Resume Button, Sound & Menu Drawer -->
-      <div class="flex items-center gap-2 sm:gap-3">
+      <div class="flex items-center gap-1.5 sm:gap-3">
         <!-- Direct Resume View & Download Button -->
         <button
           type="button"
           (click)="openResumeModal()"
-          class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-[#ff3b00]/15 text-[#ff3b00] border border-[#ff3b00]/30 hover:bg-[#ff3b00] hover:text-white transition-all cursor-pointer shadow-sm"
+          class="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-mono font-semibold bg-[#ff3b00]/15 text-[#ff3b00] border border-[#ff3b00]/30 hover:bg-[#ff3b00] hover:text-white transition-all cursor-pointer shadow-sm"
           title="View & Download Executive Resume"
         >
           <i class="bx bx-file text-sm"></i>
@@ -333,7 +333,7 @@
         <button
           (click)="sound.toggleSound()"
           [title]="sound.enabled() ? 'Mute sound FX' : 'Enable sound FX'"
-          class="p-2 rounded-full hover:bg-white/10 transition-colors text-xs font-mono cursor-pointer flex items-center justify-center text-zinc-300 hover:text-white"
+          class="p-1.5 sm:p-2 rounded-full hover:bg-white/10 transition-colors text-xs font-mono cursor-pointer flex items-center justify-center text-zinc-300 hover:text-white"
           aria-label="Toggle Sound Effects"
         >
           @if (sound.enabled()) {
@@ -346,7 +346,7 @@
         <!-- Fullscreen Editorial Drawer Button with Boxicons -->
         <button
           (click)="toggleMenu()"
-          class="p-2 rounded-full bg-white/10 hover:bg-[#ff3b00] text-white transition-all cursor-pointer flex items-center justify-center w-8 h-8"
+          class="p-1.5 sm:p-2 rounded-full bg-white/10 hover:bg-[#ff3b00] text-white transition-all cursor-pointer flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8"
           aria-label="Open menu drawer"
         >
           <i class="bx text-base" [class.bx-x]="menuOpen()" [class.bx-menu]="!menuOpen()"></i>
@@ -486,7 +486,7 @@
         </div>
 
         <!-- Dynamic Editorial Headline -->
-        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.08]">
+        <h1 class="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] sm:leading-[1.08]">
           {{ heroData().titleMain }}
           <em class="not-italic text-[#ff3b00] font-normal underline decoration-[#ff3b00]/30 decoration-wavy">
             {{ heroData().titleItalic }}
@@ -499,12 +499,12 @@
         </p>
 
         <!-- CTA Action Buttons -->
-        <div class="pt-2 flex flex-wrap items-center gap-3 font-mono text-xs">
+        <div class="pt-2 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 sm:gap-3 font-mono text-[11px] sm:text-xs">
           <!-- View Resume Modal Button -->
           <button
             type="button"
             (click)="openResumeModal()"
-            class="flex items-center gap-2 px-5 py-3.5 rounded-full bg-[#ff3b00] text-white font-semibold tracking-wider hover:bg-[#ff5522] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
+            class="flex items-center justify-center gap-1.5 px-3 sm:px-5 py-3 sm:py-3.5 rounded-full bg-[#ff3b00] text-white font-semibold tracking-wider hover:bg-[#ff5522] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer text-center"
           >
             <i class="bx bx-file text-base"></i>
             <span>VIEW RESUME</span>
@@ -514,7 +514,7 @@
           <button
             type="button"
             (click)="downloadResumeFile()"
-            class="flex items-center gap-2 px-5 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold tracking-wider hover:border-[#ff3b00] hover:text-[#ff3b00] hover:bg-white/15 transition-all shadow-sm cursor-pointer"
+            class="flex items-center justify-center gap-1.5 px-3 sm:px-5 py-3 sm:py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold tracking-wider hover:border-[#ff3b00] hover:text-[#ff3b00] hover:bg-white/15 transition-all shadow-sm cursor-pointer text-center"
           >
             <i class="bx bx-download text-base"></i>
             <span>DOWNLOAD CV</span>
@@ -522,7 +522,7 @@
 
           <a
             href="#work"
-            class="flex items-center gap-1.5 px-5 py-3.5 rounded-full bg-white text-black font-semibold tracking-wider hover:bg-zinc-200 transition-all shadow-md cursor-pointer"
+            class="flex items-center justify-center gap-1 px-3 sm:px-5 py-3 sm:py-3.5 rounded-full bg-white text-black font-semibold tracking-wider hover:bg-zinc-200 transition-all shadow-md cursor-pointer text-center"
           >
             <span>EXPLORE WORK</span>
             <i class="bx bx-right-arrow-alt text-base"></i>
@@ -530,7 +530,7 @@
 
           <a
             href="#contact"
-            class="px-5 py-3.5 rounded-full bg-transparent border border-white/20 text-white font-medium tracking-wider hover:border-[#ff3b00] hover:text-[#ff3b00] shadow-sm transition-all cursor-pointer"
+            class="flex items-center justify-center px-3 sm:px-5 py-3 sm:py-3.5 rounded-full bg-transparent border border-white/20 text-white font-medium tracking-wider hover:border-[#ff3b00] hover:text-[#ff3b00] shadow-sm transition-all cursor-pointer text-center"
           >
             GET IN TOUCH
           </a>
@@ -538,23 +538,24 @@
           <button
             (click)="replayCurtain()"
             title="Replay cinematic intro curtain"
-            class="p-3.5 rounded-full bg-transparent border border-white/10 hover:border-[#ff3b00] text-zinc-400 hover:text-[#ff3b00] shadow-sm transition-colors cursor-pointer flex items-center justify-center"
+            class="col-span-2 sm:col-auto p-2.5 sm:p-3.5 rounded-full bg-transparent border border-white/10 hover:border-[#ff3b00] text-zinc-400 hover:text-[#ff3b00] shadow-sm transition-colors cursor-pointer flex items-center justify-center gap-1.5 text-center"
             aria-label="Replay intro"
           >
             <i class="bx bx-revision text-base"></i>
+            <span class="sm:hidden text-[11px] font-medium">REPLAY INTRO</span>
           </button>
         </div>
 
         <!-- Quick credibility micro-metrics -->
-        <div class="pt-4 flex items-center gap-6 font-mono text-xs text-zinc-400 border-t border-white/10 font-medium">
+        <div class="pt-4 flex flex-wrap items-center gap-3 sm:gap-6 font-mono text-xs text-zinc-400 border-t border-white/10 font-medium">
           <div>
             <span class="font-bold text-white font-display text-base">8.0</span>/10 CGPA
           </div>
-          <div class="w-1 h-1 rounded-full bg-zinc-700"></div>
+          <div class="hidden sm:block w-1 h-1 rounded-full bg-zinc-700"></div>
           <div>
             <span class="font-bold text-white font-display text-base">4</span> Roles &amp; Internships
           </div>
-          <div class="w-1 h-1 rounded-full bg-zinc-700"></div>
+          <div class="hidden sm:block w-1 h-1 rounded-full bg-zinc-700"></div>
           <div>
             <span class="font-bold text-white font-display text-base">500+</span> MEAN/MERN Hours
           </div>
@@ -569,7 +570,7 @@
           #telemetryCard
           (mousemove)="onTelemetryMouseMove($event, telemetryCard)"
           (mouseleave)="resetTelemetryMove()"
-          class="tilt-element glass-panel rounded-2xl p-6 sm:p-7 border border-black/10 dark:border-white/10 shadow-2xl relative overflow-hidden"
+          class="tilt-element glass-panel rounded-2xl p-4 sm:p-7 border border-black/10 dark:border-white/10 shadow-2xl relative overflow-hidden"
           [style.transform]="telemetryTilt()"
         >
           <!-- Dynamic glare reflection -->
@@ -584,7 +585,7 @@
               <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
               <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
               <span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
-              <span class="ml-2 font-mono text-xs text-zinc-600 dark:text-zinc-400 tracking-wider truncate max-w-[200px] sm:max-w-none font-medium">
+              <span class="ml-2 font-mono text-xs text-zinc-600 dark:text-zinc-400 tracking-wider truncate max-w-[130px] min-[400px]:max-w-[190px] sm:max-w-none font-medium">
                 {{ heroData().dashTitle }}
               </span>
             </div>
@@ -595,7 +596,7 @@
           </div>
 
           <!-- 4 KPI Bento Grid with Animated SVG Sparklines -->
-          <div class="tilt-inner-deep grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="tilt-inner-deep grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             @for (kpi of heroData().kpis; track kpi.label; let i = $index) {
               <div class="p-4 rounded-xl bg-white/80 dark:bg-white/5 border border-zinc-200/80 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20 transition-all shadow-[0_1px_3px_rgba(0,0,0,0.03)] group">
                 <div class="text-xs font-mono text-zinc-600 dark:text-zinc-400 truncate mb-1 font-medium">
@@ -689,44 +690,44 @@
         </div>
 
         <!-- Right Quick Facts Bento Box -->
-        <div class="lg:col-span-5 glass-panel rounded-2xl p-6 border border-white/10 space-y-4 shadow-sm bg-white/5 scroll-reveal-right delay-150">
+        <div class="lg:col-span-5 glass-panel rounded-2xl p-4 sm:p-6 border border-white/10 space-y-4 shadow-sm bg-white/5 scroll-reveal-right delay-150">
           <div class="font-mono text-xs text-[#ff3b00] uppercase tracking-wider mb-2 font-bold flex items-center gap-1.5">
             <i class="bx bx-chip text-base"></i>
             <span>ENGINEERING DOSSIER</span>
           </div>
           
           <div class="divide-y divide-white/5 font-mono text-xs">
-            <div class="py-3 flex justify-between items-center">
+            <div class="py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
               <span class="text-zinc-400 uppercase font-medium">Current Role</span>
               <span class="font-semibold text-emerald-400">Tetranetics, Mumbai</span>
             </div>
-            <div class="py-3 flex justify-between items-center">
+            <div class="py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
               <span class="text-zinc-400 uppercase font-medium">Core Discipline</span>
               <span class="font-semibold text-white">Full-Stack Software Engineering</span>
             </div>
-            <div class="py-3 flex justify-between items-center">
+            <div class="py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
               <span class="text-zinc-400 uppercase font-medium">Primary Stacks</span>
               <span class="font-semibold text-white">MEAN &amp; MERN &middot; Angular 22 &middot; Node.js</span>
             </div>
-            <div class="py-3 flex justify-between items-center">
+            <div class="py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
               <span class="text-zinc-400 uppercase font-medium">Work Location</span>
               <span class="font-semibold text-white">Mumbai, India</span>
             </div>
-            <div class="py-3 flex justify-between items-center">
+            <div class="py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
               <span class="text-zinc-400 uppercase font-medium">Permanent Address</span>
               <span class="font-semibold text-zinc-300">Hisar, Haryana, India</span>
             </div>
-            <div class="py-3 flex justify-between items-center">
+            <div class="py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
               <span class="text-zinc-400 uppercase font-medium">Degree</span>
               <span class="font-semibold text-white">B.Tech in Computer Science &middot; CDLU</span>
             </div>
-            <div class="py-3 flex justify-between items-center">
+            <div class="py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
               <span class="text-zinc-400 uppercase font-medium">Academic CGPA</span>
               <span class="font-semibold text-emerald-400 font-display text-sm">8.0 / 10.0</span>
             </div>
-            <div class="py-3 flex justify-between items-center">
+            <div class="py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
               <span class="text-zinc-400 uppercase font-medium">Status</span>
-              <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-medium border border-emerald-500/20">
+              <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-medium border border-emerald-500/20 self-start sm:self-auto">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 Active at Tetranetics
               </span>
@@ -746,7 +747,7 @@
     <!-- ==================== EXPERIENCE SECTION ==================== -->
     <section id="experience" class="py-16 md:py-24 border-t border-black/10 dark:border-white/10">
       
-      <div class="flex items-baseline justify-between mb-12 scroll-reveal-bottom">
+      <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-8 sm:mb-12 gap-2 scroll-reveal-bottom">
         <div>
           <span class="font-mono text-xs text-[#ff3b00] tracking-widest uppercase">// 02 CAREER TRACK</span>
           <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight uppercase mt-1">EXPERIENCE</h2>
@@ -756,28 +757,28 @@
 
       <div class="space-y-6">
         @for (item of experiences; track item.index; let idx = $index) {
-          <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-white/10 hover:border-[#ff3b00]/40 transition-all duration-300 group shadow-sm"
+          <div class="glass-panel rounded-2xl p-4 sm:p-8 border border-zinc-200 dark:border-white/10 hover:border-[#ff3b00]/40 transition-all duration-300 group shadow-sm"
                [class.border-emerald-500/40]="item.isCurrent"
                [class.scroll-reveal-left]="idx % 2 === 0"
                [class.scroll-reveal-right]="idx % 2 !== 0"
                [class.delay-100]="true">
             
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-black/5 dark:border-white/5">
-              <div class="flex items-center gap-3">
-                <span class="font-mono text-sm text-[#ff3b00] font-bold">{{ item.index }}</span>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-black/5 dark:border-white/5">
+              <div class="flex items-start sm:items-center gap-3">
+                <span class="font-mono text-sm text-[#ff3b00] font-bold mt-1 sm:mt-0">{{ item.index }}</span>
                 <div>
-                  <h3 class="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-[#ff3b00] transition-colors flex items-center gap-2 flex-wrap">
+                  <h3 class="font-display text-lg sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-[#ff3b00] transition-colors flex items-center gap-2 flex-wrap">
                     <span>{{ item.role }}</span>
                     @if (item.isCurrent) {
                       <span class="text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400">@ {{ item.org }}</span>
                     }
                   </h3>
-                  <div class="text-xs font-mono text-zinc-600 dark:text-zinc-400 font-medium">
+                  <div class="text-xs font-mono text-zinc-600 dark:text-zinc-400 font-medium mt-0.5">
                     {{ item.org }} · {{ item.location }}
                   </div>
                 </div>
               </div>
-              <div class="flex items-center gap-2">
+              <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-1 sm:mt-0">
                 @if (item.metric) {
                   <span class="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">
                     {{ item.metric }}
@@ -799,7 +800,7 @@
                     {{ item.badge }}
                   </span>
                 }
-                <span class="font-mono text-xs text-zinc-600 dark:text-zinc-400 font-medium ml-2">{{ item.date }}</span>
+                <span class="font-mono text-xs text-zinc-600 dark:text-zinc-400 font-medium sm:ml-2">{{ item.date }}</span>
               </div>
             </div>
 
@@ -818,21 +819,21 @@
     <!-- ==================== SELECTED PROJECTS SHOWCASE (Huyml + 21st.dev) ==================== -->
     <section id="work" class="py-16 md:py-24 border-t border-black/10 dark:border-white/10">
       
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 scroll-reveal-bottom">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-12 scroll-reveal-bottom">
         <div>
-          <span class="font-mono text-xs text-[#ff3b00] tracking-widest uppercase">// 04 PORTFOLIO PIECES</span>
+          <span class="font-mono text-xs text-[#ff3b00] tracking-widest uppercase">// 03 PORTFOLIO PIECES</span>
           <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight uppercase mt-1">FEATURED PROJECTS</h2>
         </div>
 
         <!-- Software portfolio status pill -->
-        <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-zinc-300 font-medium">
+        <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-zinc-300 font-medium self-start sm:self-auto">
           <span class="w-1.5 h-1.5 rounded-full bg-[#ff3b00] animate-pulse"></span>
           <span>4 PRODUCTION BUILDS</span>
         </div>
       </div>
 
       <!-- 4 Project Cards Grid (With 3D Hover & Live Simulation Launcher) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         @for (proj of filteredProjects(); track proj.id; let idx = $index) {
           <div class="glass-panel rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 hover:shadow-2xl transition-all duration-300 flex flex-col group shadow-sm"
                [class.scroll-reveal-left]="idx % 2 === 0"
@@ -841,7 +842,7 @@
                [class.delay-300]="idx === 3">
             
             <!-- Card Header & Palette Dots (Huyml style) -->
-            <div class="p-5 pb-3 flex items-center justify-between border-b border-black/5 dark:border-white/5">
+            <div class="p-4 sm:p-5 pb-3 flex items-center justify-between border-b border-black/5 dark:border-white/5">
               <span class="font-mono text-xs font-bold text-zinc-500 dark:text-zinc-400 group-hover:text-[#ff3b00] transition-colors">
                 {{ proj.index }}
               </span>
@@ -874,9 +875,9 @@
             </div>
 
             <!-- Body & Description -->
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="p-4 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
               <div>
-                <h3 class="font-display text-2xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-[#ff3b00] transition-colors">
+                <h3 class="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-[#ff3b00] transition-colors">
                   {{ proj.title }}
                 </h3>
                 <p class="font-sans text-xs sm:text-sm text-zinc-800 dark:text-zinc-300 mt-2 leading-relaxed">
@@ -898,7 +899,7 @@
                 <button
                   type="button"
                   (click)="openProjectModal(proj)"
-                  class="w-full py-2.5 px-4 rounded-xl font-mono text-xs font-semibold tracking-wider text-center bg-transparent border border-white/15 text-white hover:border-[#ff3b00] hover:bg-[#ff3b00] hover:text-white transition-all cursor-pointer flex items-center justify-center gap-2 group-hover:shadow-md"
+                  class="w-full py-3 px-4 rounded-xl font-mono text-xs font-semibold tracking-wider text-center bg-transparent border border-white/15 text-white hover:border-[#ff3b00] hover:bg-[#ff3b00] hover:text-white transition-all cursor-pointer flex items-center justify-center gap-2 group-hover:shadow-md"
                 >
                   <span>TEST INTERACTIVE DEMO</span>
                   <i class="bx bx-right-arrow-alt text-base"></i>
@@ -929,9 +930,9 @@
         </div>
 
         <!-- 2 Detailed Upcoming Project Bento Cards -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           @for (item of upcomingProjects; track item.id; let idx = $index) {
-            <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-white/10 relative overflow-hidden flex flex-col justify-between space-y-6 shadow-md hover:shadow-xl transition-all duration-300 group"
+            <div class="glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-zinc-200 dark:border-white/10 relative overflow-hidden flex flex-col justify-between space-y-6 shadow-md hover:shadow-xl transition-all duration-300 group"
                  [class.scroll-reveal-left]="idx === 0"
                  [class.scroll-reveal-right]="idx !== 0"
                  [class.delay-150]="idx !== 0">
@@ -944,7 +945,7 @@
 
               <!-- Top Meta Row -->
               <div class="space-y-4">
-                <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-4">
+                <div class="flex flex-wrap items-center justify-between border-b border-black/5 dark:border-white/5 pb-4 gap-2">
                   <div class="flex items-center gap-2">
                     <span class="font-mono text-xs font-bold text-zinc-500 dark:text-zinc-400 group-hover:text-[#ff3b00] transition-colors">
                       {{ item.index }}
@@ -1058,7 +1059,7 @@
     <!-- ==================== SKILLS & VERIFICATIONS BENTO GRID ==================== -->
     <section id="skills" class="py-16 md:py-24 border-t border-black/10 dark:border-white/10">
       
-      <div class="flex items-baseline justify-between mb-12 scroll-reveal-bottom">
+      <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-8 sm:mb-12 gap-2 scroll-reveal-bottom">
         <div>
           <span class="font-mono text-xs text-[#ff3b00] tracking-widest uppercase">// 04 CAPABILITIES</span>
           <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight uppercase mt-1">SKILLS &amp; CERTS</h2>
@@ -1069,13 +1070,13 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
         <!-- Bento Card 1: Interactive Skill Matrix (8 Cols) -->
-        <div class="lg:col-span-8 glass-panel rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-white/10 space-y-6 shadow-sm scroll-reveal-left">
+        <div class="lg:col-span-8 glass-panel rounded-2xl p-4 sm:p-8 border border-zinc-200 dark:border-white/10 space-y-6 shadow-sm scroll-reveal-left">
           <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-4">
             <h3 class="font-display text-xl font-bold tracking-tight uppercase">Technical Matrix</h3>
             <span class="font-mono text-xs text-zinc-600 dark:text-zinc-400 font-medium">4 CORE DOMAINS</span>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             @for (grp of skillGroups; track grp.title) {
               <div class="p-4 rounded-xl bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 space-y-2.5">
                 <div class="flex items-center justify-between font-mono text-xs">
@@ -1095,7 +1096,7 @@
         </div>
 
         <!-- Bento Card 2: Education Highlight (4 Cols) -->
-        <div class="lg:col-span-4 glass-panel rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-white/10 flex flex-col justify-between space-y-6 shadow-sm scroll-reveal-right delay-150">
+        <div class="lg:col-span-4 glass-panel rounded-2xl p-4 sm:p-8 border border-zinc-200 dark:border-white/10 flex flex-col justify-between space-y-6 shadow-sm scroll-reveal-right delay-150">
           <div>
             <div class="font-mono text-xs text-[#ff3b00] uppercase tracking-wider mb-1 font-bold">// DEGREE &amp; ACADEMICS</div>
             <h3 class="font-display text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
@@ -1122,7 +1123,7 @@
         </div>
 
         <!-- Bento Card 3: Verifications & Certifications (6 Cols) -->
-        <div class="lg:col-span-6 glass-panel rounded-2xl p-6 sm:p-8 border border-white/10 space-y-6 shadow-sm bg-white/5 scroll-reveal-left delay-100">
+        <div class="lg:col-span-6 glass-panel rounded-2xl p-4 sm:p-8 border border-white/10 space-y-6 shadow-sm bg-white/5 scroll-reveal-left delay-100">
           <div class="flex items-center justify-between border-b border-white/5 pb-4">
             <h3 class="font-display text-xl font-bold tracking-tight uppercase text-white">Licenses &amp; Certifications</h3>
             <span class="font-mono text-xs text-emerald-400 font-medium flex items-center gap-1">
@@ -1137,7 +1138,7 @@
                 <div class="font-display font-bold text-base text-white">
                   {{ cert.name }}
                 </div>
-                <div class="font-mono text-xs text-zinc-400 flex items-center justify-between font-medium">
+                <div class="font-mono text-xs text-zinc-400 flex flex-wrap items-center justify-between gap-1 font-medium">
                   <span>{{ cert.issuer }} &middot; {{ cert.date }}</span>
                   <span class="text-[#ff3b00] font-mono font-bold">ID: {{ cert.credentialId }}</span>
                 </div>
@@ -1154,13 +1155,13 @@
         </div>
 
         <!-- Bento Card 4: Achievements & Bootcamps (6 Cols) -->
-        <div class="lg:col-span-6 glass-panel rounded-2xl p-6 sm:p-8 border border-white/10 space-y-6 shadow-sm bg-white/5 scroll-reveal-right delay-200">
+        <div class="lg:col-span-6 glass-panel rounded-2xl p-4 sm:p-8 border border-white/10 space-y-6 shadow-sm bg-white/5 scroll-reveal-right delay-200">
           <div class="flex items-center justify-between border-b border-white/5 pb-4">
             <h3 class="font-display text-xl font-bold tracking-tight uppercase text-white">Key Achievements</h3>
             <span class="font-mono text-xs text-[#ff3b00] font-bold">HONORS</span>
           </div>
 
-          <ul class="space-y-4 font-sans text-sm text-zinc-300">
+          <ul class="space-y-3 font-sans text-sm text-zinc-300">
             @for (ach of achievements; track ach) {
               <li class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5 text-zinc-200 leading-relaxed">
                 <i class="bx bx-star text-[#ff3b00] text-base leading-none mt-0.5 shrink-0"></i>
@@ -1177,12 +1178,12 @@
     <!-- ==================== CONTACT & FOOTER SECTION ==================== -->
     <section id="contact" class="py-16 md:py-24 border-t border-white/10">
       
-      <div class="glass-panel rounded-3xl p-8 sm:p-14 border border-white/10 relative overflow-hidden shadow-sm bg-white/5 scroll-reveal-scale">
+      <div class="glass-panel rounded-3xl p-6 sm:p-10 md:p-14 border border-white/10 relative overflow-hidden shadow-sm bg-white/5 scroll-reveal-scale">
         
         <div class="max-w-3xl space-y-6">
           <span class="font-mono text-xs text-[#ff3b00] tracking-widest uppercase font-bold">// 05 CONNECT</span>
           
-          <h2 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight uppercase text-white">
+          <h2 class="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight uppercase text-white">
             LET'S BUILD YOUR NEXT <br />
             <span class="shimmer-text underline decoration-[#ff3b00]/30 decoration-wavy">WEB APPLICATION.</span>
           </h2>
@@ -1206,7 +1207,7 @@
                   <i class="bx bx-copy text-xs"></i>
                 </span>
               </div>
-              <div class="font-display text-lg font-bold text-white group-hover:text-[#ff3b00] transition-colors">
+              <div class="font-display text-base sm:text-lg font-bold text-white group-hover:text-[#ff3b00] transition-colors break-all sm:break-normal">
                 sunverma192@gmail.com
               </div>
             </button>
@@ -1223,7 +1224,7 @@
                   <i class="bx bx-phone text-xs"></i>
                 </span>
               </div>
-              <div class="font-display text-lg font-bold text-white group-hover:text-[#ff3b00] transition-colors">
+              <div class="font-display text-base sm:text-lg font-bold text-white group-hover:text-[#ff3b00] transition-colors">
                 +91 98172 45565
               </div>
             </a>
@@ -1242,7 +1243,7 @@
                   <i class="bx bx-link-external text-xs"></i>
                 </span>
               </div>
-              <div class="font-display text-lg font-bold text-white group-hover:text-[#ff3b00] transition-colors">
+              <div class="font-display text-base sm:text-lg font-bold text-white group-hover:text-[#ff3b00] transition-colors break-all sm:break-normal">
                 /sunny-verma-27707830b
               </div>
             </a>
@@ -1261,7 +1262,7 @@
                   <i class="bx bx-code-alt text-xs"></i>
                 </span>
               </div>
-              <div class="font-display text-lg font-bold text-white group-hover:text-[#ff3b00] transition-colors">
+              <div class="font-display text-base sm:text-lg font-bold text-white group-hover:text-[#ff3b00] transition-colors break-all sm:break-normal">
                 /Sunny1260
               </div>
             </a>
@@ -1269,16 +1270,16 @@
           </div>
 
           <!-- Bottom Footer Details -->
-          <div class="pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-zinc-400 font-medium">
+          <div class="pt-8 sm:pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-zinc-400 font-medium text-center md:text-left">
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/15 p-1 flex items-center justify-center">
+              <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/15 p-1 flex items-center justify-center shrink-0">
                 <img src="assets/logo.png" alt="Sunny Verma Logo" width="32" height="32" class="w-full h-full object-contain filter drop-shadow-[0_1px_4px_rgba(255,59,0,0.4)]" />
               </div>
               <span>&copy; 2026 Sunny Verma &middot; Full-Stack Software Developer (MEAN &amp; MERN).</span>
             </div>
-            <div class="flex items-center gap-3">
+            <div class="flex flex-wrap items-center justify-center md:justify-end gap-2 sm:gap-3">
               <span>Mumbai, India (Work) &middot; Hisar (Permanent)</span>
-              <span>&middot;</span>
+              <span class="hidden sm:inline">&middot;</span>
               <button
                 type="button"
                 (click)="openResumeModal()"
@@ -1300,9 +1301,9 @@
 
   <!-- ==================== INTERACTIVE PROJECT TESTBED MODAL ==================== -->
   @if (activeModalProject()) {
-    <div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-2 sm:p-6 overflow-y-auto">
       
-      <div class="glass-panel w-full max-w-3xl rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-white/20 text-zinc-900 dark:text-white max-h-[90vh] overflow-y-auto space-y-6 shadow-2xl">
+      <div class="glass-panel w-full max-w-3xl rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-zinc-200 dark:border-white/20 text-zinc-900 dark:text-white max-h-[94vh] overflow-y-auto space-y-6 shadow-2xl">
         
         <!-- Modal Header -->
         <div class="flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-4">
@@ -1817,9 +1818,9 @@
 
   <!-- ==================== UPCOMING PROJECT ENGINEERING LAB MODAL ==================== -->
   @if (activeUpcomingProject()) {
-    <div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-2 sm:p-6 overflow-y-auto">
       
-      <div class="glass-panel w-full max-w-4xl rounded-3xl p-6 sm:p-10 border border-zinc-200 dark:border-white/20 text-zinc-900 dark:text-white max-h-[92vh] overflow-y-auto space-y-6 shadow-2xl relative">
+      <div class="glass-panel w-full max-w-4xl rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-10 border border-zinc-200 dark:border-white/20 text-zinc-900 dark:text-white max-h-[94vh] overflow-y-auto space-y-6 shadow-2xl relative">
         
         <!-- Modal Top Header -->
         <div class="flex items-start justify-between border-b border-black/10 dark:border-white/10 pb-5">
@@ -2085,32 +2086,32 @@
 
   <!-- ==================== EXECUTIVE RESUME MODAL (VIEW & DOWNLOAD) ==================== -->
   @if (activeResumeModal()) {
-    <div class="fixed inset-0 z-50 bg-black/85 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-in fade-in duration-200">
+    <div class="print-resume-modal fixed inset-0 z-50 bg-black/85 backdrop-blur-2xl flex items-center justify-center p-2 sm:p-6 overflow-y-auto animate-in fade-in duration-200">
       
-      <div class="glass-panel w-full max-w-4xl rounded-3xl border border-white/20 text-white max-h-[92vh] overflow-y-auto flex flex-col shadow-2xl bg-[#0c0c0e]/95">
+      <div class="glass-panel w-full max-w-4xl rounded-2xl sm:rounded-3xl border border-white/20 text-white max-h-[94vh] overflow-y-auto flex flex-col shadow-2xl bg-[#0c0c0e]/95">
         
         <!-- Sticky Action Header -->
-        <div class="sticky top-0 z-20 px-6 py-4 border-b border-white/10 bg-[#0c0c0e]/95 backdrop-blur-md flex flex-wrap items-center justify-between gap-3">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-2xl bg-white/10 border border-white/20 p-1 flex items-center justify-center shadow-md">
+        <div class="no-print sticky top-0 z-20 px-4 sm:px-6 py-3 sm:py-4 border-b border-white/10 bg-[#0c0c0e]/95 backdrop-blur-md flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5 sm:gap-3">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-2xl bg-white/10 border border-white/20 p-1 flex items-center justify-center shadow-md shrink-0">
               <img src="assets/logo.png" alt="Sunny Verma Logo" width="40" height="40" class="w-full h-full object-contain filter drop-shadow-[0_1px_4px_rgba(255,59,0,0.5)]" />
             </div>
             <div>
-              <div class="font-display font-extrabold text-base sm:text-lg tracking-tight leading-none text-white">
+              <div class="font-display font-extrabold text-sm sm:text-lg tracking-tight leading-none text-white">
                 Sunny Verma &middot; Executive Resume
               </div>
-              <div class="text-[11px] font-mono text-zinc-400 mt-1 leading-none">
+              <div class="text-[10px] sm:text-[11px] font-mono text-zinc-400 mt-1 leading-none">
                 Full-Stack Software Developer (MEAN &amp; MERN) &middot; Tetranetics, Mumbai
               </div>
             </div>
           </div>
 
           <!-- Actions: Print/Save PDF, Download HTML, Close -->
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1.5 sm:gap-2">
             <button
               type="button"
               (click)="printResume()"
-              class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#ff3b00] text-white font-mono text-xs font-bold hover:bg-[#ff5522] transition-all cursor-pointer shadow-md"
+              class="flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-2 rounded-xl bg-[#ff3b00] text-white font-mono text-[11px] sm:text-xs font-bold hover:bg-[#ff5522] transition-all cursor-pointer shadow-md"
               title="Print or Save as PDF"
             >
               <i class="bx bx-printer text-base"></i>
@@ -2120,7 +2121,7 @@
             <button
               type="button"
               (click)="downloadResumeFile()"
-              class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/10 border border-white/20 text-white font-mono text-xs font-bold hover:bg-white/20 hover:border-[#ff3b00] transition-all cursor-pointer"
+              class="flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-2 rounded-xl bg-white/10 border border-white/20 text-white font-mono text-[11px] sm:text-xs font-bold hover:bg-white/20 hover:border-[#ff3b00] transition-all cursor-pointer"
               title="Download standalone resume file"
             >
               <i class="bx bx-download text-base"></i>
@@ -2131,7 +2132,7 @@
             <button
               type="button"
               (click)="closeResumeModal()"
-              class="p-2 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors cursor-pointer text-lg flex items-center justify-center font-bold"
+              class="p-1.5 sm:p-2 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors cursor-pointer text-lg flex items-center justify-center font-bold"
               aria-label="Close Resume Modal"
             >
               <i class="bx bx-x text-2xl"></i>
@@ -2139,8 +2140,8 @@
           </div>
         </div>
 
-        <!-- Scrollable Resume Sheet Content -->
-        <div class="p-6 sm:p-10 space-y-8 font-sans text-xs sm:text-sm text-zinc-300">
+        <!-- Scrollable Resume Sheet Content (printable area) -->
+        <div class="p-4 sm:p-8 md:p-10 space-y-6 sm:space-y-8 font-sans text-xs sm:text-sm text-zinc-300">
           
           <!-- Top Contact Block -->
           <div class="border-b border-white/10 pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -2338,7 +2339,7 @@
         </div>
 
         <!-- Sticky Footer in Modal -->
-        <div class="px-6 py-4 border-t border-white/10 bg-white/5 flex items-center justify-between font-mono text-xs">
+        <div class="no-print px-6 py-4 border-t border-white/10 bg-white/5 flex items-center justify-between font-mono text-xs">
           <span class="text-zinc-400">Ready to download or print PDF</span>
           <div class="flex items-center gap-2">
             <button
