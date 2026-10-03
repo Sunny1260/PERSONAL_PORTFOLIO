@@ -99,7 +99,8 @@ portfolio/
 ## 📬 Contact
 
 - **Sunny Verma** — Full-Stack Software Developer (MEAN & MERN)
-- **Location**: Mumbai &middot; Hisar, India
+- **Work Location**: Mumbai, India
+- **Permanent Address**: Hisar, Haryana, India
 - **Email**: [sunverma192@gmail.com](mailto:sunverma192@gmail.com)
 - **Phone**: [+91 98172 45565](tel:+919817245565)
 - **LinkedIn**: [linkedin.com/in/sunny-verma-27707830b](https://linkedin.com/in/sunny-verma-27707830b)

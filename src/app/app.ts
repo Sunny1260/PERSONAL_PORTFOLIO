@@ -93,6 +93,39 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
   readonly telemetryTilt = signal<string>('rotateX(0deg) rotateY(0deg)');
   readonly telemetryGlare = signal<string>('transparent');
 
+  // Interactive Food For Needy (Donation-to-Kitchen Community Prep Simulator)
+  readonly foodDonationAmount = signal<number>(500);
+  readonly selectedKitchenHub = signal<string>('Kitchen #04 - Central City Hub');
+  readonly foodDispatchSimulated = signal<boolean>(false);
+  readonly simulatedReceiptId = signal<string>('FFN-8842-K04');
+
+  readonly simulatedCheckpoint = computed(() => {
+    switch (this.selectedKitchenHub()) {
+      case 'Kitchen #07 - Downtown Metro':
+        return 'Hub 07: Downtown Shelter Point (28.6289° N, 77.2065° E)';
+      case 'Kitchen #12 - Industrial Suburb':
+        return 'Hub 12: Railway Colony Checkpoint (28.6502° N, 77.2210° E)';
+      default:
+        return 'Hub 04: Central Station Distribution Checkpoint (28.6139° N, 77.2090° E)';
+    }
+  });
+
+  readonly calculatedFoodMeals = computed(() => {
+    return Math.max(1, Math.floor(this.foodDonationAmount() / 30));
+  });
+
+  readonly calculatedRiceKg = computed(() => {
+    return (this.calculatedFoodMeals() * 0.22).toFixed(1);
+  });
+
+  readonly calculatedDalKg = computed(() => {
+    return (this.calculatedFoodMeals() * 0.12).toFixed(1);
+  });
+
+  readonly calculatedVeggiesKg = computed(() => {
+    return (this.calculatedFoodMeals() * 0.18).toFixed(1);
+  });
+
   // Interactive Live Spam Classifier simulation state
   readonly testEmailText = signal<string>(
     'Urgent alert: Congratulations! You have won a $1,000 cash prize voucher. Click here to verify your account right now.'
@@ -481,15 +514,15 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
 
   downloadResumeFile() {
     this.sound.playSuccess();
-    this.copiedToast.set('Downloading Sunny Verma Resume...');
+    this.copiedToast.set('Downloading Sunny Verma Resume (PDF)...');
     if (this.toastTimeout) clearTimeout(this.toastTimeout);
     this.toastTimeout = setTimeout(() => {
       this.copiedToast.set(null);
     }, 3200);
 
     const link = document.createElement('a');
-    link.href = 'Sunny_Verma_Resume.html';
-    link.download = 'Sunny_Verma_Resume.html';
+    link.href = 'assets/Sunny_Verma_Resume_Updated.pdf';
+    link.download = 'Sunny_Verma_Resume_Updated.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -525,6 +558,36 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
     } else {
       this.testEmailText.set('Hi Sunny, regarding the Q3 Power BI dashboard update, we reviewed your DAX measures and the reporting latency is down 40%. Great work!');
     }
+  }
+
+  setFoodDonation(amount: number) {
+    this.sound.playClick();
+    this.foodDonationAmount.set(amount);
+    this.foodDispatchSimulated.set(false);
+  }
+
+  setKitchenHub(hub: string) {
+    this.sound.playClick();
+    this.selectedKitchenHub.set(hub);
+    this.foodDispatchSimulated.set(false);
+  }
+
+  simulateFoodDispatch() {
+    this.sound.playSuccess();
+    const hubSuffix = this.selectedKitchenHub().includes('#07') ? 'K07' : this.selectedKitchenHub().includes('#12') ? 'K12' : 'K04';
+    const randCode = Math.floor(1000 + Math.random() * 9000);
+    this.simulatedReceiptId.set(`FFN-${randCode}-${hubSuffix}`);
+    this.foodDispatchSimulated.set(true);
+    this.copiedToast.set(`Dispatched ${this.calculatedFoodMeals()} freshly cooked hot meals to ${this.simulatedCheckpoint()}!`);
+    if (this.toastTimeout) clearTimeout(this.toastTimeout);
+    this.toastTimeout = setTimeout(() => {
+      this.copiedToast.set(null);
+    }, 4000);
+  }
+
+  resetFoodDispatch() {
+    this.sound.playClick();
+    this.foodDispatchSimulated.set(false);
   }
 
   private updateClock() {

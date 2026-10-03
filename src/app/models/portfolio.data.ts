@@ -31,7 +31,7 @@ export interface ProjectItem {
   tags: string[];
   image: string;
   palette: string[];
-  simulationType: 'spam_classifier' | 'spotify_explorer' | 'leaf_diagnosis';
+  simulationType: 'food_for_needy' | 'spam_classifier' | 'spotify_explorer' | 'leaf_diagnosis';
 }
 
 export interface ExperienceItem {
@@ -162,8 +162,22 @@ export const PORTFOLIO_HERO_DATA: Record<'analytics' | 'fullstack', PersonaHeroD
 
 export const PROJECTS_DATA: ProjectItem[] = [
   {
+    id: 'food-for-needy',
+    index: '01 / 04',
+    title: 'Food For Needy',
+    category: 'Full-Stack MEAN & Social Impact',
+    domain: 'fullstack',
+    metric: '12,850+',
+    metricLabel: 'hot meals prepared & served',
+    description: 'High-throughput platform connecting donors directly with dedicated community kitchens. Monetary donations fund fresh, hygienic batch cooking on-site, dynamically dispatched to geofenced distribution hubs for needy families with transparent digital receipts.',
+    tags: ['MEAN Stack', 'Angular 22', 'Node.js', 'Express', 'MongoDB', 'Redis Queues', 'Geofencing'],
+    image: 'assets/projects/food-for-needy.jpg',
+    palette: ['#ff3b00', '#10b981', '#f59e0b'],
+    simulationType: 'food_for_needy'
+  },
+  {
     id: 'spam-detector',
-    index: '01 / 03',
+    index: '02 / 04',
     title: 'Email Spam Detection',
     category: 'Machine Learning',
     domain: 'fullstack',
@@ -177,7 +191,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: 'spotify-eda',
-    index: '02 / 03',
+    index: '03 / 04',
     title: 'Spotify Top 100 Songs',
     category: 'Audio Data Engineering',
     domain: 'fullstack',
@@ -191,7 +205,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: 'plant-disease',
-    index: '03 / 03',
+    index: '04 / 04',
     title: 'Plant Disease Detection',
     category: 'Deep Learning & Web App',
     domain: 'fullstack',

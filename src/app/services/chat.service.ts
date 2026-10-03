@@ -44,9 +44,10 @@ Upcoming Flagship Projects (in Engineering Lab):
    - Stack: Angular 22, TypeScript, Node.js, FastAPI, LangChain, ChromaDB, WebSockets.
 
 Featured Shipped Projects:
-1. Plant Leaf Disease Detection: Deep-learning CNN web service with Django & PyTorch.
-2. Email Spam Detection: 95%+ accuracy Naive Bayes & SVM NLP classifier with real-time token analysis.
-3. Spotify Top 100 EDA: Audio feature multivariate correlation & regression popularity engine.
+1. Food For Needy: Full-stack MEAN platform (Angular 22, Node.js, Express, MongoDB, Redis, Geofencing) connecting donors with dedicated community kitchens that cook hot hygienic meals on-demand from donated funds, dispatched to geofenced urban distribution points.
+2. Plant Leaf Disease Detection: Deep-learning CNN web service with Django & PyTorch.
+3. Email Spam Detection: 95%+ accuracy Naive Bayes & SVM NLP classifier with real-time token analysis.
+4. Spotify Top 100 EDA: Audio feature multivariate correlation & regression popularity engine.
 
 Past Work Experience:
 1. Tetranetics, Mumbai (Aug 2026 – Present): Full-Stack Software Developer (MEAN & MERN).
@@ -61,7 +62,8 @@ Verified Certifications:
 Direct Contact Details:
 - Email: sunverma192@gmail.com
 - Phone: +91 98172 45565
-- Location: Mumbai / Hisar, Haryana, India
+- Work Location: Mumbai, Maharashtra, India
+- Permanent Address: Hisar, Haryana, India
 - LinkedIn: https://linkedin.com/in/sunny-verma-27707830b
 - GitHub: https://github.com/Sunny1260
 
@@ -96,6 +98,7 @@ export class ChatService {
       text: "Hi! I'm Sunny's portfolio AI assistant. Sunny is a **Full-Stack Software Developer** specializing in **MEAN and MERN stacks** (MongoDB, Express, Angular 22, React, Node.js) at Tetranetics, Mumbai. Ask me anything about his architecture, upcoming systems like **WorkLoader**, or his engineering projects!",
       timestamp: new Date(),
       actions: [
+        { label: 'Food For Needy (MEAN Stack)', type: 'prompt', payload: 'Tell me about the Food For Needy project' },
         { label: 'Upcoming Projects (WorkLoader)', type: 'prompt', payload: 'Tell me about WorkLoader and upcoming projects' },
         { label: 'MEAN & MERN Full-Stack Skills', type: 'prompt', payload: 'What are Sunny’s full-stack skills?' },
         { label: 'Role at Tetranetics', type: 'prompt', payload: 'Tell me about Sunny’s role at Tetranetics' },
@@ -322,7 +325,21 @@ export class ChatService {
       };
     }
 
-    // 2. Contact & Hiring Details
+    // 2. Resume / CV Request
+    if (q.includes('resume') || q.includes('cv')) {
+      return {
+        id: `bot-${Date.now()}`,
+        sender: 'assistant',
+        text: "You can download Sunny Verma's official verified PDF resume directly [here](assets/Sunny_Verma_Resume_Updated.pdf) or by clicking the **DOWNLOAD CV** button in the hero and footer sections.\n\n• **Candidate**: Sunny Verma\n• **Role**: Full-Stack Software Developer (MEAN & MERN Stacks)\n• **Work Location**: Mumbai, India\n• **Permanent Address**: Hisar, Haryana, India\n• **Email**: sunverma192@gmail.com\n• **Phone**: +91 98172 45565",
+        timestamp: new Date(),
+        actions: [
+          { label: 'Copy Email', type: 'copy-email', payload: 'sunverma192@gmail.com' },
+          { label: 'View Contact Details', type: 'scroll-section', payload: 'contact' }
+        ]
+      };
+    }
+
+    // 3. Contact & Hiring Details
     if (
       q.includes('contact') ||
       q.includes('hire') ||
@@ -333,13 +350,12 @@ export class ChatService {
       q.includes('linkedin') ||
       q.includes('github') ||
       q.includes('available') ||
-      q.includes('interview') ||
-      q.includes('resume')
+      q.includes('interview')
     ) {
       return {
         id: `bot-${Date.now()}`,
         sender: 'assistant',
-        text: "Sunny is currently available for full-time **Full-Stack Software Engineering**, **MEAN / MERN Stack**, and **Backend Development** roles. Here are his verified contact channels:\n\n• **Email**: sunverma192@gmail.com\n• **Phone**: +91 98172 45565\n• **Location**: Mumbai / Hisar, Haryana, India\n• **LinkedIn**: /sunny-verma-27707830b\n• **GitHub**: github.com/Sunny1260",
+        text: "Sunny is currently available for full-time **Full-Stack Software Engineering**, **MEAN / MERN Stack**, and **Backend Development** roles. Here are his verified contact channels:\n\n• **Email**: sunverma192@gmail.com\n• **Phone**: +91 98172 45565\n• **Work Location**: Mumbai, India\n• **Permanent Address**: Hisar, Haryana, India\n• **LinkedIn**: /sunny-verma-27707830b\n• **GitHub**: github.com/Sunny1260",
         timestamp: new Date(),
         actions: [
           { label: 'Copy Email', type: 'copy-email', payload: 'sunverma192@gmail.com' },
@@ -409,6 +425,26 @@ export class ChatService {
     }
 
     // 4. Featured Projects (Shipped)
+    if (
+      q.includes('food') ||
+      q.includes('needy') ||
+      q.includes('donat') ||
+      q.includes('kitchen') ||
+      q.includes('hunger') ||
+      q.includes('meal')
+    ) {
+      return {
+        id: `bot-${Date.now()}`,
+        sender: 'assistant',
+        text: "**Food For Needy (MEAN Stack & Social Impact)**:\n\nA full-stack platform engineered with **Angular 22, Node.js, Express, MongoDB, Redis Queues, and Geofencing** connecting donors directly with dedicated community kitchens:\n\n• **Direct Community Kitchens**: Rather than distributing perishable leftovers, monetary donations directly fund on-site hygienic cooking batches of wholesome hot meals (steamed rice, nutritious lentils/dal, farm-fresh vegetables) on demand.\n• **Geofenced Checkpoint Distribution**: Prepared meal batches are tracked, packaged, and dispatched to designated geofenced urban hubs where verified needy individuals receive nutrition with dignity.\n• **Transparent Verification**: Generates cryptographic digital receipts and tracks real-time meal counts (12,850+ meals prepared to date).\n\nYou can run the live interactive kitchen prep and dispatch simulator right now on this portfolio!",
+        timestamp: new Date(),
+        actions: [
+          { label: 'Open Food for Needy Simulator', type: 'open-demo', payload: 'food-for-needy' },
+          { label: 'View Featured Projects', type: 'scroll-section', payload: 'work' }
+        ]
+      };
+    }
+
     if (q.includes('spam') || q.includes('nlp') || q.includes('classifier')) {
       return {
         id: `bot-${Date.now()}`,
@@ -452,7 +488,7 @@ export class ChatService {
       return {
         id: `bot-${Date.now()}`,
         sender: 'assistant',
-        text: "Sunny's portfolio showcases both shipped systems and upcoming engineering lab initiatives:\n\n**Featured Shipped Systems**:\n1. **Plant Leaf Disease Detection**: Deep-learning CNN web service with Django.\n2. **Email Spam Detection**: 95%+ accuracy NLP classifier with real-time token inspector.\n3. **Spotify Top 100 EDA**: Audio correlation & regression popularity engine.\n\n**Upcoming in Engineering Lab**:\n• **WorkLoader**: Automated task reminder & manager status sync platform (Angular 22 & Node.js).\n• **OmniAssistant AI**: Autonomous enterprise engineering copilot with vector RAG.",
+        text: "Sunny's portfolio showcases both shipped systems and upcoming engineering lab initiatives:\n\n**Featured Shipped Systems**:\n1. **Food For Needy**: Transparent MEAN stack platform connecting donors to dedicated community kitchens with geofenced meal distribution.\n2. **Plant Leaf Disease Detection**: Deep-learning CNN web service with Django.\n3. **Email Spam Detection**: 95%+ accuracy NLP classifier with real-time token inspector.\n4. **Spotify Top 100 EDA**: Audio correlation & regression popularity engine.\n\n**Upcoming in Engineering Lab**:\n• **WorkLoader**: Automated task reminder & manager status sync platform (Angular 22 & Node.js).\n• **OmniAssistant AI**: Autonomous enterprise engineering copilot with vector RAG.",
         timestamp: new Date(),
         actions: [
           { label: 'Test Interactive Demos', type: 'scroll-section', payload: 'work' },

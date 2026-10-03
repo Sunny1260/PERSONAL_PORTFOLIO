@@ -28,7 +28,7 @@
           </h1>
         </div>
         <div class="font-mono text-xs text-white/40">
-          HISAR, HARYANA · INDIA
+          MUMBAI, INDIA (WORK) · HISAR, HARYANA (HOME)
         </div>
       </div>
 
@@ -368,7 +368,7 @@
         </div>
         <div class="flex items-center gap-4">
           <span class="hidden sm:inline-block font-mono text-xs text-white/50 tracking-wider">
-            HISAR, IN &middot; {{ currentTime() }}
+            MUMBAI, IN &middot; {{ currentTime() }}
           </span>
           <button
             (click)="toggleMenu()"
@@ -452,8 +452,9 @@
           </button>
         </div>
         <div>
-          <span class="block text-white/40 mb-1 uppercase tracking-wider">Location</span>
-          <span class="text-white">Hisar, Haryana, India</span>
+          <span class="block text-white/40 mb-1 uppercase tracking-wider">Work Location</span>
+          <span class="text-white">Mumbai, India</span>
+          <span class="block text-white/40 text-[10px] mt-0.5">Permanent Address: Hisar, Haryana</span>
         </div>
         <div class="flex items-center gap-4 sm:justify-end">
           <a href="https://linkedin.com/in/sunny-verma-27707830b" target="_blank" rel="noopener" class="text-white hover:text-[#ff3b00] transition-colors flex items-center gap-1">
@@ -708,8 +709,12 @@
               <span class="font-semibold text-white">MEAN &amp; MERN &middot; Angular 22 &middot; Node.js</span>
             </div>
             <div class="py-3 flex justify-between items-center">
-              <span class="text-zinc-400 uppercase font-medium">Location</span>
-              <span class="font-semibold text-white">Mumbai &middot; Hisar, India</span>
+              <span class="text-zinc-400 uppercase font-medium">Work Location</span>
+              <span class="font-semibold text-white">Mumbai, India</span>
+            </div>
+            <div class="py-3 flex justify-between items-center">
+              <span class="text-zinc-400 uppercase font-medium">Permanent Address</span>
+              <span class="font-semibold text-zinc-300">Hisar, Haryana, India</span>
             </div>
             <div class="py-3 flex justify-between items-center">
               <span class="text-zinc-400 uppercase font-medium">Degree</span>
@@ -815,26 +820,25 @@
       
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 scroll-reveal-bottom">
         <div>
-          <span class="font-mono text-xs text-[#ff3b00] tracking-widest uppercase">// 03 PORTFOLIO PIECES</span>
+          <span class="font-mono text-xs text-[#ff3b00] tracking-widest uppercase">// 04 PORTFOLIO PIECES</span>
           <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight uppercase mt-1">FEATURED PROJECTS</h2>
         </div>
 
         <!-- Software portfolio status pill -->
         <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-zinc-300 font-medium">
           <span class="w-1.5 h-1.5 rounded-full bg-[#ff3b00] animate-pulse"></span>
-          <span>3 PRODUCTION BUILDS</span>
+          <span>4 PRODUCTION BUILDS</span>
         </div>
       </div>
 
-      <!-- 3 Project Cards Grid (With 3D Hover & Live Simulation Launcher) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- 4 Project Cards Grid (With 3D Hover & Live Simulation Launcher) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         @for (proj of filteredProjects(); track proj.id; let idx = $index) {
           <div class="glass-panel rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 hover:shadow-2xl transition-all duration-300 flex flex-col group shadow-sm"
-               [class.scroll-reveal-left]="idx === 0"
-               [class.scroll-reveal-bottom]="idx === 1"
-               [class.scroll-reveal-right]="idx >= 2"
-               [class.delay-150]="idx === 1"
-               [class.delay-300]="idx >= 2">
+               [class.scroll-reveal-left]="idx % 2 === 0"
+               [class.scroll-reveal-right]="idx % 2 === 1"
+               [class.delay-150]="idx === 1 || idx === 2"
+               [class.delay-300]="idx === 3">
             
             <!-- Card Header & Palette Dots (Huyml style) -->
             <div class="p-5 pb-3 flex items-center justify-between border-b border-black/5 dark:border-white/5">
@@ -1273,7 +1277,7 @@
               <span>&copy; 2026 Sunny Verma &middot; Full-Stack Software Developer (MEAN &amp; MERN).</span>
             </div>
             <div class="flex items-center gap-3">
-              <span>Hisar &middot; Mumbai, India</span>
+              <span>Mumbai, India (Work) &middot; Hisar (Permanent)</span>
               <span>&middot;</span>
               <button
                 type="button"
@@ -1316,6 +1320,296 @@
             <span>CLOSE</span>
           </button>
         </div>
+
+        <!-- SIMULATOR 0: Food For Needy (Donation-to-Kitchen Community Cooking & Geofenced Dispatch) -->
+        @if (activeModalProject()?.simulationType === 'food_for_needy') {
+          <div class="space-y-6">
+            <!-- Architectural Overview Card -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-amber-500/10 border border-amber-500/25 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs font-bold text-amber-500 uppercase tracking-wider flex items-center gap-1.5">
+                  <i class="bx bx-dish text-base"></i>
+                  // MEAN STACK · COMMUNITY KITCHEN & GEOFENCED DISTRIBUTION
+                </span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold">
+                  LIVE PIPELINE
+                </span>
+              </div>
+              <p class="font-sans text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 leading-relaxed">
+                <strong>Food For Needy</strong> connects donors directly with dedicated community kitchens. Rather than handling erratic surplus leftovers, monetary contributions directly finance on-site cooking of fresh, hygienic, hot meals. Batches are prepared in real-time and dispatched to geofenced urban distribution checkpoints where verified needy individuals receive nutritious food with complete transparency.
+              </p>
+            </div>
+
+            <!-- Interactive Selector 1: Donation Amount -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between font-mono text-xs">
+                <span class="font-bold text-zinc-800 dark:text-zinc-200 uppercase tracking-wide">
+                  1. Select or Enter Donation Amount:
+                </span>
+                <span class="text-[#ff3b00] font-bold">
+                  ₹{{ foodDonationAmount() }} INR (~{{ calculatedFoodMeals() }} Hot Meals)
+                </span>
+              </div>
+
+              <!-- Quick Presets -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
+                <button
+                  type="button"
+                  (click)="setFoodDonation(250)"
+                  class="p-2.5 rounded-xl border text-center transition-all font-semibold"
+                  [class.border-[#ff3b00]]="foodDonationAmount() === 250"
+                  [class.bg-[#ff3b00]/15]="foodDonationAmount() === 250"
+                  [class.border-zinc-300]="foodDonationAmount() !== 250"
+                  [class.dark:border-white/10]="foodDonationAmount() !== 250"
+                >
+                  ₹250 <span class="text-[11px] font-normal opacity-80">(8 Meals)</span>
+                </button>
+                <button
+                  type="button"
+                  (click)="setFoodDonation(500)"
+                  class="p-2.5 rounded-xl border text-center transition-all font-semibold"
+                  [class.border-[#ff3b00]]="foodDonationAmount() === 500"
+                  [class.bg-[#ff3b00]/15]="foodDonationAmount() === 500"
+                  [class.border-zinc-300]="foodDonationAmount() !== 500"
+                  [class.dark:border-white/10]="foodDonationAmount() !== 500"
+                >
+                  ₹500 <span class="text-[11px] font-normal opacity-80">(16 Meals)</span>
+                </button>
+                <button
+                  type="button"
+                  (click)="setFoodDonation(1000)"
+                  class="p-2.5 rounded-xl border text-center transition-all font-semibold"
+                  [class.border-[#ff3b00]]="foodDonationAmount() === 1000"
+                  [class.bg-[#ff3b00]/15]="foodDonationAmount() === 1000"
+                  [class.border-zinc-300]="foodDonationAmount() !== 1000"
+                  [class.dark:border-white/10]="foodDonationAmount() !== 1000"
+                >
+                  ₹1,000 <span class="text-[11px] font-normal opacity-80">(32 Meals)</span>
+                </button>
+                <button
+                  type="button"
+                  (click)="setFoodDonation(2500)"
+                  class="p-2.5 rounded-xl border text-center transition-all font-semibold"
+                  [class.border-[#ff3b00]]="foodDonationAmount() === 2500"
+                  [class.bg-[#ff3b00]/15]="foodDonationAmount() === 2500"
+                  [class.border-zinc-300]="foodDonationAmount() !== 2500"
+                  [class.dark:border-white/10]="foodDonationAmount() !== 2500"
+                >
+                  ₹2,500 <span class="text-[11px] font-normal opacity-80">(80 Meals)</span>
+                </button>
+              </div>
+
+              <!-- Range Slider for Custom Value -->
+              <div class="pt-2">
+                <input
+                  type="range"
+                  min="60"
+                  max="5000"
+                  step="30"
+                  [ngModel]="foodDonationAmount()"
+                  (ngModelChange)="setFoodDonation($event)"
+                  class="w-full accent-[#ff3b00]"
+                />
+              </div>
+            </div>
+
+            <!-- Interactive Selector 2: Designated Kitchen & Geofenced Distribution Point -->
+            <div class="space-y-2">
+              <label class="block font-mono text-xs font-bold text-zinc-800 dark:text-zinc-200 uppercase tracking-wide">
+                2. Designated Community Kitchen &amp; Geofenced Checkpoint:
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-xs">
+                <button
+                  type="button"
+                  (click)="setKitchenHub('Kitchen #04 - Central City Hub')"
+                  class="p-3 rounded-xl border text-left transition-all"
+                  [class.border-emerald-500]="selectedKitchenHub() === 'Kitchen #04 - Central City Hub'"
+                  [class.bg-emerald-500/10]="selectedKitchenHub() === 'Kitchen #04 - Central City Hub'"
+                  [class.border-zinc-300]="selectedKitchenHub() !== 'Kitchen #04 - Central City Hub'"
+                  [class.dark:border-white/10]="selectedKitchenHub() !== 'Kitchen #04 - Central City Hub'"
+                >
+                  <div class="font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+                    Kitchen #04 (Central)
+                  </div>
+                  <div class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Cap: 3,500 meals/day</div>
+                  <div class="text-[10px] text-emerald-600 dark:text-emerald-400 mt-1 font-semibold">→ Hub 04: Central Station</div>
+                </button>
+
+                <button
+                  type="button"
+                  (click)="setKitchenHub('Kitchen #07 - Downtown Metro')"
+                  class="p-3 rounded-xl border text-left transition-all"
+                  [class.border-emerald-500]="selectedKitchenHub() === 'Kitchen #07 - Downtown Metro'"
+                  [class.bg-emerald-500/10]="selectedKitchenHub() === 'Kitchen #07 - Downtown Metro'"
+                  [class.border-zinc-300]="selectedKitchenHub() !== 'Kitchen #07 - Downtown Metro'"
+                  [class.dark:border-white/10]="selectedKitchenHub() !== 'Kitchen #07 - Downtown Metro'"
+                >
+                  <div class="font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+                    Kitchen #07 (Downtown)
+                  </div>
+                  <div class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Cap: 5,000 meals/day</div>
+                  <div class="text-[10px] text-emerald-600 dark:text-emerald-400 mt-1 font-semibold">→ Hub 07: Shelter Concourse</div>
+                </button>
+
+                <button
+                  type="button"
+                  (click)="setKitchenHub('Kitchen #12 - Industrial Suburb')"
+                  class="p-3 rounded-xl border text-left transition-all"
+                  [class.border-emerald-500]="selectedKitchenHub() === 'Kitchen #12 - Industrial Suburb'"
+                  [class.bg-emerald-500/10]="selectedKitchenHub() === 'Kitchen #12 - Industrial Suburb'"
+                  [class.border-zinc-300]="selectedKitchenHub() !== 'Kitchen #12 - Industrial Suburb'"
+                  [class.dark:border-white/10]="selectedKitchenHub() !== 'Kitchen #12 - Industrial Suburb'"
+                >
+                  <div class="font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+                    Kitchen #12 (Suburban)
+                  </div>
+                  <div class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Cap: 2,200 meals/day</div>
+                  <div class="text-[10px] text-emerald-600 dark:text-emerald-400 mt-1 font-semibold">→ Hub 12: Railway Colony</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Live Ingredient & Kitchen Yield Telemetry Breakdown -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/10 space-y-4">
+              <div class="flex items-center justify-between font-mono text-xs">
+                <span class="font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+                  <i class="bx bx-pie-chart-alt-2 text-[#ff3b00] text-base"></i>
+                  Community Kitchen Ingredient Breakdown
+                </span>
+                <span class="text-zinc-500 dark:text-zinc-400 font-semibold">₹30.00 / Hot Thali</span>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs">
+                <div class="p-3 rounded-xl bg-white dark:bg-black/30 border border-zinc-200 dark:border-white/10">
+                  <div class="text-zinc-500 dark:text-zinc-400 text-[10px] uppercase font-bold">Steamed Rice</div>
+                  <div class="font-display text-xl font-extrabold text-amber-500 mt-1">{{ calculatedRiceKg() }} kg</div>
+                  <div class="text-[10px] text-zinc-600 dark:text-zinc-400 mt-0.5">High-energy grains</div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-white dark:bg-black/30 border border-zinc-200 dark:border-white/10">
+                  <div class="text-zinc-500 dark:text-zinc-400 text-[10px] uppercase font-bold">Nutritious Dal</div>
+                  <div class="font-display text-xl font-extrabold text-emerald-500 mt-1">{{ calculatedDalKg() }} kg</div>
+                  <div class="text-[10px] text-zinc-600 dark:text-zinc-400 mt-0.5">Protein-rich lentils</div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-white dark:bg-black/30 border border-zinc-200 dark:border-white/10">
+                  <div class="text-zinc-500 dark:text-zinc-400 text-[10px] uppercase font-bold">Farm Vegetables</div>
+                  <div class="font-display text-xl font-extrabold text-cyan-500 mt-1">{{ calculatedVeggiesKg() }} kg</div>
+                  <div class="text-[10px] text-zinc-600 dark:text-zinc-400 mt-0.5">Fresh vitamins &amp; fiber</div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-white dark:bg-black/30 border border-zinc-200 dark:border-white/10">
+                  <div class="text-zinc-500 dark:text-zinc-400 text-[10px] uppercase font-bold">Meal Boxes</div>
+                  <div class="font-display text-xl font-extrabold text-[#ff3b00] mt-1">{{ calculatedFoodMeals() }} pkgs</div>
+                  <div class="text-[10px] text-zinc-600 dark:text-zinc-400 mt-0.5">Hygienic eco-seals</div>
+                </div>
+              </div>
+
+              <!-- Geofenced Destination Notice -->
+              <div class="p-3 rounded-xl bg-black/20 border border-white/5 font-mono text-[11px] text-zinc-300 flex items-center justify-between flex-wrap gap-2">
+                <div class="flex items-center gap-1.5">
+                  <i class="bx bx-map-pin text-[#ff3b00] text-sm"></i>
+                  <span>Target Distribution Checkpoint: <strong>{{ simulatedCheckpoint() }}</strong></span>
+                </div>
+                <span class="text-emerald-400 font-bold">GEOFENCE ACTIVE (300m RAD)</span>
+              </div>
+            </div>
+
+            <!-- SIMULATION EXECUTION TRIGGER / RECEIPT -->
+            @if (!foodDispatchSimulated()) {
+              <button
+                type="button"
+                (click)="simulateFoodDispatch()"
+                class="w-full py-4 px-6 rounded-2xl font-mono text-sm font-bold tracking-wider text-center bg-[#ff3b00] text-white hover:bg-[#e03400] transition-all cursor-pointer shadow-lg shadow-[#ff3b00]/25 flex items-center justify-center gap-3"
+              >
+                <i class="bx bx-check-shield text-xl"></i>
+                <span>SIMULATE KITCHEN COOKING &amp; MEAL DISPATCH (₹{{ foodDonationAmount() }})</span>
+                <i class="bx bx-right-arrow-alt text-xl"></i>
+              </button>
+            } @else {
+              <!-- Successful Dispatch & Verified Transparency Certificate -->
+              <div class="p-5 sm:p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 space-y-4">
+                <div class="flex items-center justify-between border-b border-emerald-500/20 pb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="font-mono text-xs font-bold text-emerald-400 uppercase tracking-wider">
+                      MEALS PREPARED &amp; DISPATCHED ON-SITE
+                    </span>
+                  </div>
+                  <span class="font-mono text-xs text-zinc-400">STATUS: VERIFIED</span>
+                </div>
+
+                <!-- 4-Stage Live Telemetry Stepper -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-[11px]">
+                  <div class="p-2.5 rounded-lg bg-black/20 border border-emerald-500/20 text-emerald-300">
+                    <div class="font-bold flex items-center gap-1">
+                      <i class="bx bx-check-circle"></i>
+                      <span>1. Escrow Funded</span>
+                    </div>
+                    <div class="text-[10px] text-zinc-400 mt-1">₹{{ foodDonationAmount() }} allocated</div>
+                  </div>
+
+                  <div class="p-2.5 rounded-lg bg-black/20 border border-emerald-500/20 text-emerald-300">
+                    <div class="font-bold flex items-center gap-1">
+                      <i class="bx bx-check-circle"></i>
+                      <span>2. Kitchen Cooked</span>
+                    </div>
+                    <div class="text-[10px] text-zinc-400 mt-1">{{ calculatedFoodMeals() }} thalis hot</div>
+                  </div>
+
+                  <div class="p-2.5 rounded-lg bg-black/20 border border-emerald-500/20 text-emerald-300">
+                    <div class="font-bold flex items-center gap-1">
+                      <i class="bx bx-check-circle"></i>
+                      <span>3. Quality Inspected</span>
+                    </div>
+                    <div class="text-[10px] text-zinc-400 mt-1">Temp 74°C · Eco sealed</div>
+                  </div>
+
+                  <div class="p-2.5 rounded-lg bg-black/20 border border-emerald-500/20 text-emerald-300">
+                    <div class="font-bold flex items-center gap-1">
+                      <i class="bx bx-check-circle"></i>
+                      <span>4. Served at Hub</span>
+                    </div>
+                    <div class="text-[10px] text-zinc-400 mt-1">Geofence confirmed</div>
+                  </div>
+                </div>
+
+                <!-- Donor Verification Card Details -->
+                <div class="p-4 rounded-xl bg-black/40 border border-emerald-500/20 space-y-2 font-mono text-xs">
+                  <div class="flex items-center justify-between text-zinc-300">
+                    <span class="text-zinc-500">DIGITAL RECEIPT ID:</span>
+                    <span class="font-bold text-white tracking-wider">{{ simulatedReceiptId() }}</span>
+                  </div>
+                  <div class="flex items-center justify-between text-zinc-300">
+                    <span class="text-zinc-500">PREPARATION KITCHEN:</span>
+                    <span class="text-emerald-300 font-semibold">{{ selectedKitchenHub() }}</span>
+                  </div>
+                  <div class="flex items-center justify-between text-zinc-300">
+                    <span class="text-zinc-500">SERVED TO BENEFICIARIES:</span>
+                    <span class="font-bold text-emerald-400">{{ calculatedFoodMeals() }} Verified Needy Individuals</span>
+                  </div>
+                  <div class="flex items-center justify-between text-zinc-300">
+                    <span class="text-zinc-500">DESTINATION HUB:</span>
+                    <span class="text-zinc-300">{{ simulatedCheckpoint() }}</span>
+                  </div>
+                </div>
+
+                <!-- Reset Button -->
+                <button
+                  type="button"
+                  (click)="resetFoodDispatch()"
+                  class="w-full py-2.5 px-4 rounded-xl font-mono text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer text-center"
+                >
+                  <i class="bx bx-refresh text-base mr-1"></i>
+                  Simulate Another Donation Batch
+                </button>
+              </div>
+            }
+          </div>
+        }
 
         <!-- SIMULATOR 1: Email Spam Detection -->
         @if (activeModalProject()?.simulationType === 'spam_classifier') {
@@ -1860,7 +2154,8 @@
             </div>
 
             <div class="font-mono text-xs text-zinc-400 space-y-1 sm:text-right">
-              <div>Mumbai &middot; Hisar, Haryana, India</div>
+              <div><strong class="text-zinc-200">Work Location:</strong> Mumbai, India</div>
+              <div><strong class="text-zinc-200">Permanent Address:</strong> Hisar, Haryana, India</div>
               <div>+91 98172 45565 &middot; sunverma192&#64;gmail.com</div>
               <div class="text-[#ff3b00]">
                 linkedin.com/in/sunny-verma-27707830b &middot; github.com/Sunny1260
