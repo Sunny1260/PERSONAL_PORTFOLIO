@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunny Verma — Full-Stack Software Developer (MEAN &amp; MERN) | Resume</title>
+  
+  <!-- Boxicons CDN -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- Modern Typography: Syne, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #0c0c0e;
+      --accent: #ff3b00;
+      --text: #27272a;
+      --muted: #52525b;
+      --border: #e4e4e7;
+      --bg: #ffffff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background-color: #09090b;
+      line-height: 1.5;
+      padding: 2.5rem 1rem;
+    }
+    .resume-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 3.25rem;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+    .header-title h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .header-title .subtitle {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 0.35rem;
+      letter-spacing: 0.02em;
+    }
+    .contact-info {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.65;
+    }
+    .contact-info a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-info a:hover {
+      color: var(--accent);
+    }
+    .section {
+      margin-bottom: 1.6rem;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-title i {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    .summary-text {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .item {
+      margin-bottom: 1.2rem;
+    }
+    .item:last-child {
+      margin-bottom: 0;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+    .item-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+    .item-org {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .item-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .item-bullets {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .item-bullets li {
+      margin-bottom: 0.25rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem 1.5rem;
+    }
+    .skill-block {
+      font-size: 0.86rem;
+    }
+    .skill-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.15rem;
+    }
+    .skill-values {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .btn-actions {
+      max-width: 860px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.25rem;
+      border-radius: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(255, 59, 0, 0.4);
+    }
+    .btn-primary:hover {
+      background: #ff5522;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #f4f4f5;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.15);
+      color: #ffffff;
+    }
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .btn-actions {
+        display: none !important;
+      }
+      .resume-container {
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .resume-container {
+        padding: 1.75rem;
+      }
+      .header-title h1 {
+        font-size: 1.85rem;
+      }
+      .contact-info {
+        text-align: left;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="btn-actions">
+    <button onclick="window.print()" class="btn btn-primary">
+      <i class="bx bx-printer"></i>
+      <span>PRINT / SAVE AS PDF</span>
+    </button>
+    <a href="/" class="btn btn-secondary">
+      <i class="bx bx-arrow-back"></i>
+      <span>BACK TO PORTFOLIO</span>
+    </a>
+  </div>
+
+  <div class="resume-container">
+    
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-title">
+        <h1>Sunny Verma</h1>
+        <div class="subtitle">Full-Stack Software Developer (MEAN &amp; MERN Stacks)</div>
+      </div>
+      <div class="contact-info">
+        <div>Email: <a href="mailto:sunverma192@gmail.com">sunverma192@gmail.com</a></div>
+        <div>Phone: <a href="tel:+919817245565">+91 98172 45565</a></div>
+        <div>Location: Mumbai &middot; Hisar, Haryana, India</div>
+        <div>LinkedIn: <a href="https://linkedin.com/in/sunny-verma-27707830b" target="_blank">/sunny-verma-27707830b</a></div>
+        <div>GitHub: <a href="https://github.com/Sunny1260" target="_blank">github.com/Sunny1260</a></div>
+      </div>
+    </header>
+
+    <!-- EXECUTIVE PROFILE -->
+    <section class="section">
+      <div class="section-title"><i class="bx bx-user-pin"></i> Executive Profile</div>
+      <p class="summary-text">
+        Full-Stack Software Developer with a B.Tech in Computer Science Engineering (8.0/10.0 CGPA) from Chaudhary Devi Lal University, Sirsa. Currently operating at Tetranetics, Mumbai. Specializes in end-to-end web engineering across MEAN (Angular 22, Node.js, Express, MongoDB) and MERN (React, Node.js, Express, MongoDB) architectures, high-performance RESTful APIs, PostgreSQL relational modeling, and automated background task orchestration with Redis queues. Proven track record reducing data latency by 40% and eliminating manual reporting friction through software automation.
+      </p>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section class="section">
+      <div class="section-title"><i class="bx bx-briefcase"></i> Professional Experience</div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Full-Stack Software Developer (MEAN &amp; MERN) <span class="item-org">&middot; Tetranetics</span></span>
+          <span class="item-date">Aug 2026 – Present | Mumbai, India</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Architecting and deploying production full-stack web applications and microservices using Angular 22, React, Node.js, Express, and MongoDB.</li>
+          <li>Engineering high-throughput RESTful APIs, JWT authentication, and automated background jobs with Redis for real-time services.</li>
+          <li>Designing scalable database schemas across MongoDB (Mongoose) and PostgreSQL, optimizing query latency and system throughput.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Software Developer Intern <span class="item-org">&middot; Inospire Software</span></span>
+          <span class="item-date">May 2025 – Sep 2025 | Gurgaon, India</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Developed frontend interactive modules and real-time dashboard components integrating with backend REST APIs.</li>
+          <li>Optimized backend query execution and database schemas, reducing data retrieval and report generation latency by 40%.</li>
+          <li>Collaborated with the core engineering team on unit testing, API contract validation, and responsive UI performance tuning.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Software Engineering Intern <span class="item-org">&middot; Akash Network Logistics</span></span>
+          <span class="item-date">Jul 2024 – Sep 2024 | Rudrapur, India</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Engineered backend data ingestion scripts and workflow utilities using Python and SQL to automate logistics tracking.</li>
+          <li>Built automated data processing pipelines and validation rules that cut manual report errors by 30% across freight workflows.</li>
+          <li>Integrated internal operational APIs and database tables to surface real-time telemetry for daily dispatch operations.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Full Stack Web Development Trainee <span class="item-org">&middot; Ducat</span></span>
+          <span class="item-date">Mar 2025 – Sep 2025 | Gurgaon, India</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Completed 200+ hours of full-stack engineering covering modern frontend frameworks, Node.js, Express, and relational database modeling.</li>
+          <li>Built and deployed end-to-end database-backed web applications with secure authentication, CRUD operations, and responsive UIs.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- SELECTED ENGINEERING PROJECTS -->
+    <section class="section">
+      <div class="section-title"><i class="bx bx-code-block"></i> Selected Engineering Projects</div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">WorkLoader — Automated Task Orchestrator &amp; Manager Telemetry Sync</span>
+          <span class="item-date">In Active Development (78% Complete)</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Eliminates reporting friction by tracking ongoing tasks, executing deadline-risk Redis cron triggers, and auto-dispatching formatted executive status digests to managers via Email and Slack Webhooks.</li>
+          <li><em>Stack:</em> Angular 22 (Signals &amp; Standalone), Node.js, Express.js, MongoDB &amp; Mongoose, Redis Task Queue, PostgreSQL, Webhooks.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">OmniAssistant AI — Autonomous Executive Copilot</span>
+          <span class="item-date">Alpha Prototype (64% Complete)</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Context-aware enterprise engineering copilot featuring localized vector RAG over internal codebases and docs with zero cloud data leaks.</li>
+          <li><em>Stack:</em> TypeScript, Angular 22, Node.js, FastAPI, LangChain, ChromaDB, WebSockets.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Plant Leaf Disease Detection Web Application</span>
+          <span class="item-date">Production Prototype</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Trained a deep-learning Convolutional Neural Network (CNN) in PyTorch to detect early blight, mold, and healthy crop leaves. Wrapped in a Django web service with a farmer-friendly diagnosis interface.</li>
+          <li><em>Stack:</em> Python, Django, PyTorch, CNN, Computer Vision, SQLite/PostgreSQL.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Real-Time Email Spam Detection NLP Classifier</span>
+          <span class="item-date">Production Prototype</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Engineered an NLP classification pipeline using TF-IDF vectorization, tokenization, Naive Bayes, and SVM, achieving 95%+ test-set accuracy with interactive live token visualization.</li>
+          <li><em>Stack:</em> Python, Scikit-learn, NLP, TF-IDF, Pandas, Streamlit/Web.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section class="section">
+      <div class="section-title"><i class="bx bx-layer"></i> Technical Skills Matrix</div>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <div class="skill-label">MEAN &amp; MERN Full-Stack Engineering</div>
+          <div class="skill-values">Angular 22, Node.js, Express.js, MongoDB, Mongoose, ReactJS, TypeScript, JavaScript, RESTful APIs, HTML5/CSS3</div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Backend, Database &amp; Cloud</div>
+          <div class="skill-values">PostgreSQL, Redis Task Queues, Relational Database Modeling (DBMS/SSMS), JWT &amp; OAuth, Docker Basics, Git &amp; GitHub</div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Programming Languages</div>
+          <div class="skill-values">TypeScript, JavaScript, Python, SQL, C, C++, Java</div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Architecture &amp; Tooling</div>
+          <div class="skill-values">Microservices, Linux/Bash, VS Code, Cursor, Postman, Agile/Scrum, CI/CD Basics, Power BI</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section">
+      <div class="section-title"><i class="bx bx-book-open"></i> Education &amp; Academic Honors</div>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">B.Tech in Computer Science Engineering (AI &amp; Machine Learning Specialization)</span>
+          <span class="item-date">Graduated June 2026</span>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem;">
+          Chaudhary Devi Lal University (CDLU), Sirsa, Haryana | <strong>Cumulative GPA: 8.0 / 10.0</strong>
+        </div>
+        <ul class="item-bullets">
+          <li>Core Coursework: Relational Database Management Systems (DBMS), Data Structures &amp; Algorithms, Distributed Systems, Neural Networks.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section">
+      <div class="section-title"><i class="bx bx-award"></i> Verified Certifications</div>
+      <div class="item">
+        <ul class="item-bullets">
+          <li><strong>Power BI Job Simulation</strong> — PwC Switzerland via Forage (Jan 2025) &middot; <em>Credential ID: xJ374c4sGr6W8pXj6</em></li>
+          <li><strong>Data Visualisation: Empowering Business with Effective Insights</strong> — Tata Group via Forage (Jan 2025) &middot; <em>Credential ID: GGJLXywdExANEm9PB</em></li>
+          <li><strong>Certifications in Robotics, Python Programming &amp; Cybersecurity Fundamentals</strong> (CDLU Sirsa / MOE India IDE Bootcamp)</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
